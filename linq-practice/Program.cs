@@ -15,7 +15,7 @@ namespace linq_practice
 
             var uniqueFactors = factorsOf300.Distinct();
 
-            Console.WriteLine("Distinct members of the factorsOf300 array:");
+            Console.WriteLine("Distinct members of the array: (Distinct)");
             foreach (var f in uniqueFactors)
             {
                 Console.WriteLine(f);
@@ -47,13 +47,27 @@ namespace linq_practice
 
             IEnumerable<int> aOnlyNumbers = numbersA.Except(numbersB);
 
-            Console.WriteLine("Numbers in first array but not second array:");
+            Console.WriteLine("Numbers in first array but not second array: (Except)");
             foreach (var n in aOnlyNumbers)
             {
                 Console.WriteLine(n);
             }
         }
 
+        static void IntersectExample()
+        {
+            int[] numbersA = { 0, 1, 2, 4, 5, 6, 8, 9 };
+            int[] numbersB = { 1, 3, 5, 7, 8 };
+
+            IEnumerable<int> abNumbers = numbersA.Intersect(numbersB);
+
+            Console.WriteLine("Numbers in both first and second array: (Intersect)");
+            foreach (var n in abNumbers)
+            {
+                Console.WriteLine(n);
+            }
+
+        }
         static void unionExample()
         {
             int[] numbersA = { 0, 1, 2, 4, 5, 6, 8, 9 };
@@ -61,7 +75,7 @@ namespace linq_practice
 
             IEnumerable<int> abNumbers = numbersA.Union(numbersB);
 
-            Console.WriteLine("Numbers in first array and second array:");
+            Console.WriteLine("Numbers in first array or second array (Union):");
             foreach (var n in abNumbers)
             {
                 Console.WriteLine(n);
@@ -92,6 +106,7 @@ namespace linq_practice
             DistinctExample();
             ExceptExample();
             unionExample();
+            IntersectExample();
             lessThan();
 
 
